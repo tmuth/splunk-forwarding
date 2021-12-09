@@ -170,6 +170,9 @@ function reload_configs {
 alias conf='reload_configs'
 alias nc1='nc -k -l 6001'
 alias nc2='nc -k -l 6002'
+alias nct1='nc -k -l 6001 | tee -a ~splunk/nc1.txt'
+alias nct2='nc -k -l 6002 | tee -a ~splunk/nc2.txt'
+alias nct-clear='rm -f ~splunk/nc*.txt'
 
 
 
@@ -179,6 +182,16 @@ alias cp-config='cp /tmp/splunk/* /opt/splunk/etc/system/local'
 alias tail-metrics='. /home/splunk/./tail-metrics.sh'
 alias tail-autolb='tail -f $SPLUNK_HOME/var/log/splunk/splunkd.log | grep "TcpOutEloop"'
 alias src='source /etc/profile.d/bashrc-custom.sh'
+alias bashp='vi /etc/profile.d/bashrc-custom.sh'
 
 alias enable-iaf='app_enable "split_forward" "disable"; app_enable "index_and_forward" "enable"; conf'
 alias enable-sf='app_enable "index_and_forward" "disable"; app_enable "split_forward" "enable"; conf'
+
+alias btool-i='splunk btool inputs list tcp --debug'
+alias btool-p='splunk btool props list csv_test --debug'
+alias btool-t='splunk btool transforms  list routeSubset --debug; \
+  splunk btool transforms  list routeNull --debug; \
+  splunk btool transforms  list setParse --debug; \
+  splunk btool transforms  list cloneCsv --debug; '
+alias btool-0='splunk btool outputs list'
+
