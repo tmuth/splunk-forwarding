@@ -193,5 +193,5 @@ alias btool-t='splunk btool transforms  list routeSubset --debug; \
   splunk btool transforms  list routeNull --debug; \
   splunk btool transforms  list setParse --debug; \
   splunk btool transforms  list cloneCsv --debug; '
-alias btool-0='splunk btool outputs list'
+alias btool-o='splunk btool outputs list'
 
