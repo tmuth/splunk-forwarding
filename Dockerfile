@@ -18,7 +18,7 @@ COPY tail-metrics.sh /home/splunk/
 COPY tcp.py /home/splunk/
 RUN sudo chmod +x /home/splunk/*; sudo chown splunk:splunk /home/splunk/tcp.py
 
-RUN mkdir /tmp/splunk
+RUN mkdir /tmp/splunk; 
 COPY splunk /tmp/splunk
 #COPY splunk/* /opt/splunk/etc/system/local
 RUN sudo ln -s /opt/splunk/etc/system/local ~splunk/.

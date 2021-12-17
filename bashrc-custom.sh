@@ -186,6 +186,8 @@ alias bashp='vi /etc/profile.d/bashrc-custom.sh'
 
 alias enable-iaf='app_enable "split_forward" "disable"; app_enable "index_and_forward" "enable"; conf'
 alias enable-sf='app_enable "index_and_forward" "disable"; app_enable "split_forward" "enable"; conf'
+alias install-iaf="splunk install app /tmp/splunk/apps/index_and_forward.tar.gz"
+alias install-sf="splunk install app /tmp/splunk/apps/split_forward.tar.gz"
 
 alias btool-i='splunk btool inputs list tcp --debug'
 alias btool-p='splunk btool props list csv_test --debug'
